@@ -1,0 +1,9 @@
+/* 库构建入口：仅输出 theme + utilities，不携带 preflight 与 html/body 全局 reset，
+   避免污染宿主（如 cent）的全站 border-color / margin / overflow。
+   standalone 应用的 preflight 与全局 reset 见 src/app/app.css。 */
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+@import "tw-animate-css";
+@config "../tailwind.config.mjs";
+@plugin "@iconify/tailwind4";
